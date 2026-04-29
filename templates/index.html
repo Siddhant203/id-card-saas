@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ID Card Extractor</title>
+</head>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<body>
+
+<h1>ID Card PDF to Word Tool</h1>
+
+<!-- AdSense -->
+<script async 
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="pdfs" multiple required>
+    <br><br>
+    <button type="submit">Upload & Convert</button>
+</form>
+
+<br>
+<a href="/about">About</a> | 
+<a href="/privacy">Privacy</a>
+
+</body>
+</html>
