@@ -1,26 +1,197 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>ID Card Extractor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ID Card PDF to Word Converter</title>
+
+    <meta name="description"
+          content="Convert multiple ID card PDFs into print-ready PVC-size Word documents online.">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 <body>
 
-<h1>ID Card PDF to Word Tool</h1>
+    <!-- Navbar -->
+    <header>
+        <div class="logo">
+            ID Card Converter
+        </div>
 
-<!-- AdSense -->
-<script async 
-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/privacy">Privacy</a>
+        </nav>
+    </header>
 
-<form action="/upload" method="post" enctype="multipart/form-data">
-    <input type="file" name="pdfs" multiple required>
-    <br><br>
-    <button type="submit">Upload & Convert</button>
-</form>
+    <!-- Hero Section -->
+    <section class="hero">
 
-<br>
-<a href="/about">About</a> | 
-<a href="/privacy">Privacy</a>
+        <h1>
+            Convert ID Card PDFs into
+            Print-Ready Word Documents
+        </h1>
+
+        <p>
+            Upload multiple PDF files and automatically generate
+            optimized PVC-size Word layouts for printing.
+        </p>
+
+        <!-- Upload Form -->
+        <form action="/upload"
+              method="post"
+              enctype="multipart/form-data"
+              class="upload-box">
+
+            <input type="file"
+                   name="pdfs"
+                   multiple
+                   required>
+
+            <button type="submit">
+                Upload & Convert
+            </button>
+        </form>
+
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+
+        <div class="feature-card">
+            <h3>Fast Processing</h3>
+            <p>
+                Automatically process multiple PDFs in seconds.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>PVC Card Size</h3>
+            <p>
+                Generate print-ready Word layouts with proper sizing.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Smart Layout</h3>
+            <p>
+                Maximum page utilization with automatic arrangement.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- How it Works -->
+    <section class="how">
+
+        <h2>How It Works</h2>
+
+        <div class="steps">
+
+            <div class="step">
+                <span>1</span>
+                <p>Upload PDF files</p>
+            </div>
+
+            <div class="step">
+                <span>2</span>
+                <p>Automatic ID card extraction</p>
+            </div>
+
+            <div class="step">
+                <span>3</span>
+                <p>Download Word document</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h4>Is this tool free?</h4>
+            <p>Yes, this tool is completely free to use.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Do you store uploaded files?</h4>
+            <p>No, all uploaded files are automatically deleted.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Which formats are supported?</h4>
+            <p>Currently, PDF upload and Word output are supported.</p>
+        </div>
+
+    </section>
+
+   <!-- Developer Section -->
+<section class="developer">
+
+    <h2>Developer</h2>
+
+    <div class="developer-card">
+
+        <!-- <h3>Siddhant Kumar</h3>
+
+        <p>
+            Developer of this ID Card PDF Converter Tool.
+        </p> -->
+
+        <p class="support-email">
+            Support Email:
+            <a href="mailto:YOUR_EMAIL@gmail.com">
+                xxxxx@gmail.com
+            </a>
+        </p>
+
+        <div class="social-links">
+
+            <a href="https://facebook.com/siddhant.kumar.7773631"
+               target="_blank">
+
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                     alt="Facebook">
+
+            </a>
+
+            <a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME"
+               target="_blank">
+
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+                     alt="Instagram">
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 ID Card Converter. All rights reserved.
+        </p>
+
+        <div class="footer-links">
+            <a href="/about">About</a>
+            <a href="/privacy">Privacy Policy</a>
+        </div>
+
+
+
+    </footer>
 
 </body>
 </html>
