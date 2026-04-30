@@ -11,20 +11,21 @@ app = Flask(__name__)
 UPLOAD_FOLDER = "temp"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-app.config['MAX_CONTENT_LENGTH'] = 10 * 1024 * 1024  # 10MB
+app.config["MAX_CONTENT_LENGTH"] = 20 * 1024 * 1024  # 20MB
 
-@app.route('/')
+
+@app.route("/")
 def home():
-    return render_template('index.html')
+    return render_template("index.html")
 
 
-@app.route('/upload', methods=['POST'])
+@app.route("/upload", methods=["POST"])
 def upload():
-    files = request.files.getlist('pdfs')
+    files = request.files.getlist("pdfs")
     saved_files = []
 
     for f in files:
-        if not f.filename.endswith('.pdf'):
+        if not f.filename.lower().endswith(".pdf"):
             continue
 
         filename = str(uuid.uuid4()) + ".pdf"
@@ -36,7 +37,7 @@ def upload():
 
     process_pdfs(saved_files, output_file)
 
-    #delay deletion in a separate thread
+    # delay deletion in a separate thread
     def delayed_delete(path):
         time.sleep(10)
 
@@ -57,48 +58,65 @@ def upload():
             os.remove(output_file)
         except Exception as e:
             print("DOCX delete failed:", e)
-    
-        return response
 
+        return response
 
     response = send_file(output_file, as_attachment=True)
 
-    threading.Thread(
-        target=delayed_delete,
-        args=(output_file,)
-    ).start()
+    threading.Thread(target=delayed_delete, args=(output_file,)).start()
 
-    return response 
+    return response
 
 
-@app.route('/about')
+@app.route("/about")
 def about():
-    return render_template('about.html')
+    return render_template("about.html")
 
 
-@app.route('/privacy')
+@app.route("/privacy")
 def privacy():
-    return render_template('privacy.html')
+    return render_template("privacy.html")
 
-@app.route('/contact')
+
+@app.route("/contact")
 def contact():
-    return render_template('contact.html')
+    return render_template("contact.html")
 
-@app.route('/terms')
+
+@app.route("/terms")
 def terms():
-    return render_template('terms.html')
+    return render_template("terms.html")
 
-@app.route('/disclaimer')
+
+@app.route("/disclaimer")
 def disclaimer():
-    return render_template('disclaimer.html')
+    return render_template("disclaimer.html")
 
-@app.route('/pvc-print-guide')
-def pvc_print_guide():
-    return render_template('blogs/pvc-print-guide.html')
 
-@app.route('/blog')
+@app.route("/blog")
 def blog():
-    return render_template('blog.html')
+    return render_template("blog.html")
+
+
+@app.route("/pvc-print-guide")
+def pvc_print_guide():
+    return render_template("blogs/pvc-print-guide.html")
+
+
+@app.route("/id-card-print-settings")
+def id_card_print_settings():
+    return render_template("blogs/id-card-print-settings.html")
+
+
+@app.route("/pdf-to-word-guide")
+def pdf_to_word_guide():
+    return render_template("blogs/pdf-to-word-guide.html")
+
+
+@app.route("/common-pvc-printing-mistakes")
+def common_pvc_printing_mistakes():
+    return render_template("blogs/common-pvc-printing-mistakes.html")
+
 
 if __name__ == "__main__":
     app.run()
