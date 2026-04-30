@@ -19,6 +19,10 @@ app.config["MAX_CONTENT_LENGTH"] = 20 * 1024 * 1024  # 20MB
 def google_verify():
     return send_from_directory('', 'googlef0a54c6b1326f751.html')
 
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory('static', 'sitemap.xml')
+
 @app.route("/")
 def home():
     return render_template("index.html")
