@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://YOUR_RENDER_URL/static/sitemap.xml
+Sitemap: https://id-card-saas.onrender.com/sitemap.xml
