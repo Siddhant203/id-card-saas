@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ID Card PDF to Word Converter</title>
 
-    <meta name="description"
-          content="Convert multiple ID card PDFs into print-ready PVC-size Word documents online.">
+    <meta name="description" content="Convert multiple ID card PDFs into print-ready PVC-size Word documents online.">
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+    <meta name="keywords" content="ID Card Converter, PDF to Word, PVC card print tool, ID card PDF converter">
+
+    <meta name="author" content="Siddhant Kumar">
+
+    <meta property="og:title" content="ID Card PDF to Word Converter">
+
+    <meta property="og:description" content="Convert multiple ID card PDFs into print-ready Word documents.">
+
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
@@ -23,8 +32,11 @@
 
         <nav>
             <a href="/">Home</a>
+            <a href="/blog">Blog</a>
             <a href="/about">About</a>
             <a href="/privacy">Privacy</a>
+            <a href="/contact">Contact</a>
+            <a href="/terms">Terms</a>
         </nav>
     </header>
 
@@ -42,15 +54,9 @@
         </p>
 
         <!-- Upload Form -->
-        <form action="/upload"
-              method="post"
-              enctype="multipart/form-data"
-              class="upload-box">
+        <form action="/upload" method="post" enctype="multipart/form-data" class="upload-box">
 
-            <input type="file"
-                   name="pdfs"
-                   multiple
-                   required>
+            <input type="file" name="pdfs" multiple required>
 
             <button type="submit">
                 Upload & Convert
@@ -133,49 +139,65 @@
 
     </section>
 
-   <!-- Developer Section -->
-<section class="developer">
+    <!-- Blog Preview -->
 
-    <h2>Developer</h2>
+<section class="features">
 
-    <div class="developer-card">
+    <div class="feature-card">
 
-        <!-- <h3>Siddhant Kumar</h3>
+        <h3>How to Print PVC Cards Properly</h3>
+
+        <p>
+            Learn correct PVC card print settings and layout tips.
+        </p>
+
+        <a href="/pvc-print-guide">
+            Read Article
+        </a>
+
+    </div>
+
+</section>
+
+    <!-- Developer Section -->
+    <section class="developer">
+
+        <h2>Developer</h2>
+
+        <div class="developer-card">
+
+            <!-- <h3>Siddhant Kumar</h3>
 
         <p>
             Developer of this ID Card PDF Converter Tool.
         </p> -->
 
-        <p class="support-email">
-            Support Email:
-            <a href="mailto:YOUR_EMAIL@gmail.com">
-                xxxxx@gmail.com
-            </a>
-        </p>
+            <p class="support-email">
+                Support Email:
+                <a href="mailto:YOUR_EMAIL@gmail.com">
+                    xxxxx@gmail.com
+                </a>
+            </p>
 
-        <div class="social-links">
+            <div class="social-links">
 
-            <a href="https://facebook.com/siddhant.kumar.7773631"
-               target="_blank">
+                <a href="https://facebook.com/siddhant.kumar.7773631" target="_blank">
 
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                     alt="Facebook">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
 
-            </a>
+                </a>
 
-            <a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME"
-               target="_blank">
+                <a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank">
 
-                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-                     alt="Instagram">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
 
-            </a>
+                </a>
+
+            </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -187,6 +209,9 @@
         <div class="footer-links">
             <a href="/about">About</a>
             <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms & Conditions</a> 
+            <a href="/disclaimer">Disclaimer</a>
+             <a href="/contact">Contact</a>
         </div>
 
 
@@ -194,4 +219,5 @@
     </footer>
 
 </body>
+
 </html>

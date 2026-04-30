@@ -223,3 +223,56 @@ footer{
     text-decoration:none;
     font-weight:bold;
 }
+
+/* Page Section */
+
+.page-section{
+    padding:60px 10%;
+    background:white;
+    max-width:1000px;
+    margin:40px auto;
+    border-radius:16px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.page-section h1{
+    margin-bottom:30px;
+    color:#2563eb;
+}
+
+.page-section h2{
+    margin-top:30px;
+    margin-bottom:15px;
+}
+
+.page-section p{
+    margin-bottom:15px;
+    line-height:1.7;
+    color:#444;
+}
+
+/* Blog */
+
+.blog-list{
+    display:grid;
+    gap:20px;
+}
+
+.blog-card{
+    background:white;
+    padding:30px;
+    border-radius:16px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.blog-card h2{
+    margin-bottom:15px;
+}
+
+.blog-card a{
+    display:inline-block;
+    margin-top:15px;
+    color:#2563eb;
+    text-decoration:none;
+    font-weight:bold;
+}
