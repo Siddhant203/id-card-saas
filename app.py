@@ -6,6 +6,7 @@ from processor import process_pdfs
 from flask import after_this_request
 import threading
 import time
+from flask import send_from_directory
 
 app = Flask(__name__)
 UPLOAD_FOLDER = "temp"
@@ -13,6 +14,10 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 app.config["MAX_CONTENT_LENGTH"] = 20 * 1024 * 1024  # 20MB
 
+
+@app.route('/googlef0a54c6b1326f751.html')
+def google_verify():
+    return send_from_directory('', 'googlef0a54c6b1326f751.html')
 
 @app.route("/")
 def home():
